@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Go Out With Me?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-hearts" id="bgHearts"></div>
+
+<main id="app">
+
+  <!-- STAGE 1: The Question -->
+  <section class="stage active" id="stage-ask">
+    <h1 class="title">Hey... 👀</h1>
+    <p class="question">Will you go out on a date with me?</p>
+
+    <div class="button-row" id="buttonRow">
+      <button class="btn yes" id="yesBtn">Yes 💚</button>
+      <button class="btn no" id="noBtn">No</button>
+    </div>
+
+    <p class="counter" id="dodgeCounter"></p>
+    <p class="taunt" id="taunt"></p>
+  </section>
+
+  <!-- STAGE 2: Gauntlet (mini obstacle before a "No" is even allowed to load) -->
+  <section class="stage" id="stage-gauntlet">
+    <h2 class="title small">Wait wait wait. 🛑</h2>
+    <p class="question small">Before you can even <em>consider</em> "no," you have to survive the Gauntlet.</p>
+
+    <div class="gauntlet-box">
+      <p id="gauntletPrompt">Spin the wheel of destiny:</p>
+      <div class="wheel-wrap">
+        <div class="wheel" id="wheel">
+          <span>Yes</span><span>Definitely</span><span>Of course</span><span>Absolutely</span>
+          <span>100%</span><span>Sure thing</span><span>Heck yes</span><span>Why not</span>
+        </div>
+        <div class="wheel-pin">▼</div>
+      </div>
+      <button class="btn spin" id="spinBtn">Spin</button>
+      <p class="wheel-result" id="wheelResult"></p>
+    </div>
+  </section>
+
+  <!-- STAGE 3: Final boss - No is technically clickable now, but good luck -->
+  <section class="stage" id="stage-final">
+    <h2 class="title small">Okay fine.</h2>
+    <p class="question small">The wheel has spoken. But if you're truly, deeply certain...</p>
+    <div class="button-row final-row">
+      <button class="btn yes big" id="yesBtn2">Yes, obviously 💚</button>
+      <button class="btn no tiny" id="noBtn2">no</button>
+    </div>
+    <p class="fine-print">*"no" button confidence: <span id="confidence">2%</span></p>
+  </section>
+
+  <!-- STAGE 4: Celebration -->
+  <section class="stage" id="stage-yes">
+    <div class="confetti-canvas" id="confettiCanvas"></div>
+    <h1 class="title huge">SHE SAID YES 🎉</h1>
+    <p class="question">Great. I'll pick the place, you pick the outfit. 😄</p>
+    <p class="subtle">(This message was inevitable. Statistically speaking.)</p>
+    <button class="btn yes" id="planBtn">Pick our date 📅</button>
+  </section>
+
+  <!-- STAGE 5: Plan the actual date -->
+  <section class="stage" id="stage-plan">
+    <h2 class="title small">Let's lock in the details 📅</h2>
+
+    <p class="question small">Which day works for you?</p>
+    <div class="option-grid" id="dateOptions">
+      <button class="option-card" data-key="thisSat" type="button">
+        <span class="option-label">This Sat</span>
+        <span class="option-sub" data-field="date"></span>
+      </button>
+      <button class="option-card" data-key="thisSun" type="button">
+        <span class="option-label">This Sun</span>
+        <span class="option-sub" data-field="date"></span>
+      </button>
+      <button class="option-card" data-key="nextSat" type="button">
+        <span class="option-label">Next Sat</span>
+        <span class="option-sub" data-field="date"></span>
+      </button>
+      <button class="option-card" data-key="nextSun" type="button">
+        <span class="option-label">Next Sun</span>
+        <span class="option-sub" data-field="date"></span>
+      </button>
+    </div>
+
+    <p class="question small">What kind of date?</p>
+    <div class="option-grid" id="typeOptions">
+      <button class="option-card" data-type="biryani" type="button">
+        <span class="option-emoji">🍛</span>
+        <span class="option-label">Biryani date</span>
+      </button>
+      <button class="option-card" data-type="seafood" type="button">
+        <span class="option-emoji">🦐</span>
+        <span class="option-label">Seafood date</span>
+      </button>
+      <button class="option-card" data-type="surprise" type="button">
+        <span class="option-emoji">🎁</span>
+        <span class="option-label">Surprise me</span>
+      </button>
+    </div>
+
+    <button class="btn yes" id="confirmPlanBtn" disabled>Lock it in</button>
+  </section>
+
+  <!-- STAGE 6: Final confirmation -->
+  <section class="stage" id="stage-confirm">
+    <div class="confetti-canvas" id="confettiCanvas2"></div>
+    <h1 class="title huge">It's a date! 💌</h1>
+    <p class="question" id="confirmSummary"></p>
+    <p class="subtle">I'll see you then. 😊</p>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="dateUtils.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
