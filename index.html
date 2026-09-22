@@ -14,7 +14,7 @@
 
   <!-- STAGE 1: The Question -->
   <section class="stage active" id="stage-ask">
-    <h1 class="title">Hey... 👀</h1>
+    <h1 class="title">Hey Ipsita... 👀</h1>
     <p class="question">Will you go out on a date with me?</p>
 
     <div class="button-row" id="buttonRow">
@@ -91,19 +91,23 @@
 
     <p class="question small">What kind of date?</p>
     <div class="option-grid" id="typeOptions">
-      <button class="option-card" data-type="biryani" type="button">
-        <span class="option-emoji">🍛</span>
-        <span class="option-label">Biryani date</span>
+      <button class="option-card" data-type="asian" type="button">
+        <span class="option-emoji">🥢</span>
+        <span class="option-label">Asian cuisine</span>
       </button>
-      <button class="option-card" data-type="seafood" type="button">
-        <span class="option-emoji">🦐</span>
-        <span class="option-label">Seafood date</span>
+      <button class="option-card" data-type="cafe" type="button">
+        <span class="option-emoji">☕</span>
+        <span class="option-label">Cafe and chill</span>
       </button>
       <button class="option-card" data-type="surprise" type="button">
         <span class="option-emoji">🎁</span>
-        <span class="option-label">Surprise me</span>
+        <span class="option-label">Surprise Me!</span>
       </button>
     </div>
+
+    <p class="question small special-title">Special Instructions</p>
+    <p class="subtle special-subtitle">(because your wish is my command)</p>
+    <textarea class="special-instructions" id="specialInstructions" rows="3" placeholder="Anything specific I should know or arrange?"></textarea>
 
     <button class="btn yes" id="confirmPlanBtn" disabled>Lock it in</button>
   </section>
@@ -113,6 +117,7 @@
     <div class="confetti-canvas" id="confettiCanvas2"></div>
     <h1 class="title huge">It's a date! 💌</h1>
     <p class="question" id="confirmSummary"></p>
+    <p class="subtle" id="confirmInstructions"></p>
     <p class="subtle">I'll see you then. 😊</p>
   </section>
 

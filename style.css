@@ -380,6 +380,40 @@ body {
   font-size: 1.8rem;
 }
 
+.special-title {
+  margin-bottom: 2px;
+}
+
+.special-subtitle {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.special-instructions {
+  width: 100%;
+  resize: vertical;
+  min-height: 70px;
+  margin-bottom: 28px;
+  padding: 12px 14px;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--dark);
+  transition: border-color 0.15s ease;
+}
+
+.special-instructions:focus {
+  outline: none;
+  border-color: var(--purple);
+}
+
+.special-instructions::placeholder {
+  color: #9a8aa8;
+}
+
 #confirmPlanBtn {
   opacity: 1;
   transition: opacity 0.2s ease, transform 0.15s ease;

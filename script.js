@@ -363,10 +363,12 @@
   const typeOptions = document.getElementById("typeOptions");
   const confirmPlanBtn = document.getElementById("confirmPlanBtn");
   const confirmSummary = document.getElementById("confirmSummary");
+  const confirmInstructions = document.getElementById("confirmInstructions");
+  const specialInstructions = document.getElementById("specialInstructions");
 
   const dateTypeLabels = {
-    biryani: "a biryani date 🍛",
-    seafood: "a seafood date 🦐",
+    asian: "an Asian cuisine date 🥢",
+    cafe: "a cafe and chill date ☕",
     surprise: "a surprise date 🎁",
   };
 
@@ -415,8 +417,10 @@
 
   confirmPlanBtn.addEventListener("click", () => {
     if (confirmPlanBtn.disabled) return;
+    const instructions = specialInstructions.value.trim();
     const summaryText = `We're locked in for ${dateTypeLabels[selectedType]} on ${selectedDateLabel}!`;
     confirmSummary.textContent = summaryText;
+    confirmInstructions.textContent = instructions ? `Special instructions: ${instructions}` : "";
     showStage("confirm");
     burstConfetti(100, "confettiCanvas2");
 
@@ -424,6 +428,7 @@
       date: selectedDateLabel,
       date_type: dateTypeLabels[selectedType],
       summary: summaryText,
+      instructions: instructions || "None",
       to_email: NOTIFY_EMAIL,
     });
   });
